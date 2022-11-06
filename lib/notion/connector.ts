@@ -30,27 +30,10 @@ export default {
                         }
                     ]
                 },
-                TGAuthor: {
-                    type: "rich_text",
-                    rich_text: [
-                        {
-                            type: "text",
-                            text: {
-                                content: tgAuthor
-                            }
-                        }
-                    ]
-                },
-                Status: {
-                    type: "select",
-                    select: {
-                        name: 'Backlog'
-                    }
-                },
-                Source: {
-                    type: "select",
-                    select: {
-                        name: 'Telegram'
+                NextDate: {
+                    type: "date",
+                    date: {
+                        start: '2022-11-06'
                     }
                 }
             }
