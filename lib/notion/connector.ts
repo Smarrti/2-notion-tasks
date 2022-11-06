@@ -2,6 +2,7 @@ import { Client } from '@notionhq/client';
 import { CreatePageResponse } from "@notionhq/client/build/src/api-endpoints";
 import env from '../../env';
 import debug from 'debug';
+import dayjs from 'dayjs'
 
 const ll = debug('notionbot::notionConnector');
 
@@ -33,7 +34,7 @@ export default {
                 NextDate: {
                     type: "date",
                     date: {
-                        start: '2022-11-06'
+                        start: dayjs().format('YYYY-MM-DD')
                     }
                 },
                 "Тип": {
