@@ -35,7 +35,18 @@ export default {
                     date: {
                         start: '2022-11-06'
                     }
-                }
+                },
+                "Тип": {
+                    "multi_select": [{
+                          name: "Telegram"
+                        },
+                    ],
+                },
+                "Статус": {
+                    select: {
+                        name: 'в работе'
+                    }
+                },
             }
 
         });
