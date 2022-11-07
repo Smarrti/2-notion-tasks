@@ -13,8 +13,17 @@ const notion = new Client({
 const taskDB = env!.NOTION_TASK_DB;
 
 export default {
-    createTask: function (title: string, tgAuthor: string): Promise<CreatePageResponse> {
+    createTask: function (title: string, tgAuthor: number): Promise<CreatePageResponse> {
         ll('creating task', title, 'from', tgAuthor);
+
+        const creators = {
+            521732972: 'Дашевский Алексей',
+            1055952588: 'Еременко Юлия',
+            163454842: 'Самарин Денис'
+        }
+
+        const creator = creators[tgAuthor] || 'Неизвестный пользователь'
+
         return notion.pages.create({
             parent: {
                 database_id: taskDB
@@ -48,6 +57,11 @@ export default {
                         name: 'в работе'
                     }
                 },
+                "Кто поставил": {
+                    select: {
+                        name: creator
+                    }
+                }
             }
 
         });

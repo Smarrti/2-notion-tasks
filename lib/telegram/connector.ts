@@ -29,7 +29,7 @@ export default {
                     ll('empty username');
                     return;
                 }
-                const createTaskResult = await notionConnector.createTask(ctx.message.text, ctx.message.from.username);
+                const createTaskResult = await notionConnector.createTask(ctx.message.text, ctx.message.from.id);
                 const createdTaskMessage = 'Новая задача - [' + ctx.message.text + '](https://www.notion.so/' + notionConnector.convertTaskToUrl(createTaskResult) + ')';
                 await ctx.reply(createdTaskMessage, {
                     parse_mode: "Markdown"
