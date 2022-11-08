@@ -32,7 +32,7 @@ export default {
                 if (ctx.message.from.id !== telegramOwnerId) {
                     await bot.telegram.sendMessage(
                         telegramOwnerId,
-                        createdTaskMessage + '\nАвтор: @' + ctx.message.from.username,
+                        createdTaskMessage + '\nАвтор: @' + ctx.message.from.username || String(ctx.message.from.id),
                         {
                             parse_mode: "Markdown"
                         });
