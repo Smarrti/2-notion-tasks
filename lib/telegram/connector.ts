@@ -10,7 +10,7 @@ const allowTelegramIds = env.TELEGRAM_ALLOW_IDS;
 
 export default {
     run: function () {
-        bot.start((ctx) => ctx.reply('Добро пожаловать в бот для задач. Пишите свою задачу!\nВаш Telegram id - ' + ctx.from.id));
+        bot.start((ctx) => ctx.reply('Добро пожаловать в бот для задач. Пишите свою задачу!\nВаш Telegram id - ' + ctx.from.id + '. Порт – ' + env.PORT));
         bot.on('message', async function (ctx: Context) {
             ll('newMessage from ' + ctx.message?.from.id);
             if (
